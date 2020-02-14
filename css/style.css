@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.time {
+  /* background-color: red; */
+  font-size: 64px;
+  margin-top: 200px;
+}
+
+.options {
+  /* background-color: blue; */
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.options button {
+  width: 200px;
+  height: 75px;
+  background-color: transparent;
+  border: 3px solid black;
+  font-size: 36px;
+}
+
+button:hover {
+  color: white;
+  transition: 0.8s ease;
+  background-color: black;
+  cursor: pointer;
+}
