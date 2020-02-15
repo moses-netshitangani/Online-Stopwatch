@@ -7,7 +7,7 @@
 
 .time {
   /* background-color: red; */
-  font-size: 64px;
+  font-size: 72px;
   margin-top: 200px;
 }
 
@@ -23,6 +23,19 @@
   background-color: transparent;
   border: 3px solid black;
   font-size: 36px;
+}
+
+#reset {
+  display: none;
+}
+#start {
+  display: none;
+}
+#stop {
+  display: none;
+}
+#continue {
+  display: none;
 }
 
 button:hover {

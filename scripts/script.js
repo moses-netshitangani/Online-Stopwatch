@@ -1,3 +1,4 @@
+// Variables for time and stopwatch
 var hour = 0;
 var minute = 0;
 var second = 0;
@@ -6,11 +7,18 @@ var sec = 0;
 var min = 0;
 var hr = 0;
 var dateObject;
-var interval;
-var check = 0;
+var interval; var start_stpw;
+var stpw_button = document.getElementById("stpw");
+var start_button = document.getElementById("start");
+var stop_button = document.getElementById("stop");
+var continue_button = document.getElementById("continue");
+var reset_button = document.getElementById("reset");
+
 // Display of time on top of page
-interval = window.setInterval(calc, 1000);
-function calc() {
+interval = window.setInterval(time, 1000);
+
+// The Time function
+function time() {
   dateObject = new Date();
   hour = dateObject.getHours();
   minute = dateObject.getMinutes();
@@ -25,26 +33,22 @@ function calc() {
 }
 
 // Option for selecting a stopwatch
-function stp() {
+function stpw() {
   window.clearInterval(interval);
   dateObject = new Date("January 1, 2020 00:00:00");
   heading_time.innerHTML = "00:00:00";
 
-  // Changing the title of the button
-  var btn1 = document.getElementById("stpw-button");
-  btn1.innerHTML = "Start";
-
-  // Setting up methods for new buttons
-  btn1.onclick=ch();
-
-  // btns[1].onclick="stop()";
-  // increment();
+  // display of Start button
+  stpw_button.style.display="none";
+  start_button.style.display="inline-block";
 }
 
-// Checking
-function ch(){
-  if(check>1)
-    increment();
+// The Start method
+function start(){
+  start_stpw =  window.setInterval(increment,1000);
+  start_button.style.display="none";
+  stop_button.style.display="inline-block";
+  reset_button.style.display="inline-block";
 }
 
 // When the start button is pressed
@@ -69,9 +73,11 @@ function increment() {
       }
     }
   }
+
   hour = dateObject.getHours();
   minute = dateObject.getMinutes();
   second = dateObject.getSeconds();
+
   if(hour<10)
     hour = `0${hour}`;
   if(minute<10)
@@ -79,9 +85,30 @@ function increment() {
   if(second<10)
     second = `0${second}`;
   heading_time.innerHTML = `${hour}:${minute}:${second}`;
-  setInterval(increment,1000);
 }
 
-function stop() {
+// The Continue method
+function conti(){
+  start_stpw = window.setInterval(increment, 1000);
+  continue_button.style.display = "none";
+  stop_button.style.display = "inline-block";
+}
 
+// The Reset method
+function reset(){
+  window.clearInterval(start_stpw);
+  heading_time.innerHTML = "00:00:00";
+  if(stop_button.style.display == "inline-block")
+  {
+    stop_button.style.display = "none";
+    continue_button.style.display = "inline-block";
+  }
+  sec = 0; min = 0; hr = 0;
+}
+
+// The Stop method
+function stop() {
+  window.clearInterval(start_stpw);
+  stop_button.style.display = "none";
+  continue_button.style.display = "inline-block";
 }
