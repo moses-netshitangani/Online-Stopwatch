@@ -6,13 +6,11 @@
 }
 
 .time {
-  /* background-color: red; */
   font-size: 72px;
   margin-top: 200px;
 }
 
 .options {
-  /* background-color: blue; */
   display: inline-block;
   margin-top: 20px;
 }
