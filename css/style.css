@@ -23,16 +23,7 @@
   font-size: 36px;
 }
 
-#reset {
-  display: none;
-}
-#start {
-  display: none;
-}
-#stop {
-  display: none;
-}
-#continue {
+#reset, #start, #stop, #continue {
   display: none;
 }
 
