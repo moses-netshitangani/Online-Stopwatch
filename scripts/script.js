@@ -104,6 +104,7 @@ function reset(){
     continue_button.style.display = "inline-block";
   }
   sec = 0; min = 0; hr = 0;
+  dateObject = new Date("January 1, 2020 00:00:00");
 }
 
 // The Stop method
